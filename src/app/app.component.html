@@ -1,4 +1,13 @@
-
-<!--<router-outlet></router-outlet>-->
-
-<div #map style="width:100%; height:400px"></div>
+<div class="container">
+  <h1>Angular 2 + Google Maps Places Autocomplete</h1>
+  <form [formGroup]="searchControl">
+    <div class="form-group">
+      <input placeholder="search for location" autocapitalize="off" name="searchLocation"
+             spellcheck="false" type="text" class="form-control" #search formControlName="searchLocation">
+    </div>
+  </form>
+  <agm-map [latitude]="this.latitude" [longitude]="this.longitude"
+           [scrollwheel]="false" [zoom]="this.zoom">
+    <agm-marker [latitude]="this.latitude" [longitude]="this.longitude"></agm-marker>
+  </agm-map>
+</div>
